@@ -1,0 +1,585 @@
+{
+	"info": {
+		"_postman_id": "db2d3ed2-101b-4ead-bf91-01b43495c68e",
+		"name": "OpinionManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37642343"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Eduardo\",\r\n    \"surname\":\"Escobar\",\r\n    \"username\":\"Edesc2006\",\r\n    \"email\":\"Edesc2006@gmail.com\",\r\n    \"password\":\"Eduard02*\",\r\n    \"phone\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/opinionmanager/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"opinionmanager",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"Adm1n***\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/opinionmanager/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"opinionmanager",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "updatePassword",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\":\"Eduard02*\",\r\n    \"newPassword\":\"3du4rdo2*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/opinionmanager/v1/user/updatePassword/67b92494b418e99388e3d515",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"opinionmanager",
+								"v1",
+								"user",
+								"updatePassword",
+								"67b92494b418e99388e3d515"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Eduardos\",\r\n    \"surname\":\"Escobedos\",\r\n    \"user\":\"Escobed0\",\r\n    \"email\":\"Escob02006@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/opinionmanager/v1/user/updateUser/67b92494b418e99388e3d515",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"opinionmanager",
+								"v1",
+								"user",
+								"updateUser",
+								"67b92494b418e99388e3d515"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "createCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I5MWRiMDJmOThkMTllODI2MWU0NTIiLCJpYXQiOjE3NDAxODY5MjMsImV4cCI6MTc0MDE5MDUyM30.-jMfjdOTUhdrLxfdIP9tPMhci6bDvsYmeXO65u95VhU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\":\"Noticias\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/opinionmanager/v1/category/addCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"opinionmanager",
+								"v1",
+								"category",
+								"addCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/opinionmanager/v1/category/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"opinionmanager",
+								"v1",
+								"category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I5MWRiMDJmOThkMTllODI2MWU0NTIiLCJpYXQiOjE3NDAxODY5MjMsImV4cCI6MTc0MDE5MDUyM30.-jMfjdOTUhdrLxfdIP9tPMhci6bDvsYmeXO65u95VhU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/opinionmanager/v1/category/findCategory/67b932a2121bd0c64c920b8b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"opinionmanager",
+								"v1",
+								"category",
+								"findCategory",
+								"67b932a2121bd0c64c920b8b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I5MWRiMDJmOThkMTllODI2MWU0NTIiLCJpYXQiOjE3NDAxOTA1NjIsImV4cCI6MTc0MDE5NDE2Mn0.NQGzC-r9m8PIhLXWBzeqZzDVeZ7YePXE95oT639Aql8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\":\"Noticia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/opinionmanager/v1/category/updateCategory/67b932a2121bd0c64c920b8b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"opinionmanager",
+								"v1",
+								"category",
+								"updateCategory",
+								"67b932a2121bd0c64c920b8b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I5MWRiMDJmOThkMTllODI2MWU0NTIiLCJpYXQiOjE3NDAxOTA1NjIsImV4cCI6MTc0MDE5NDE2Mn0.NQGzC-r9m8PIhLXWBzeqZzDVeZ7YePXE95oT639Aql8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/opinionmanager/v1/category/deleteCategory/67b932a2121bd0c64c920b8b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"opinionmanager",
+								"v1",
+								"category",
+								"deleteCategory",
+								"67b932a2121bd0c64c920b8b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Publication",
+			"item": [
+				{
+					"name": "addPublication",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I5MWRiMDJmOThkMTllODI2MWU0NTIiLCJpYXQiOjE3NDAxOTA1NjIsImV4cCI6MTc0MDE5NDE2Mn0.NQGzC-r9m8PIhLXWBzeqZzDVeZ7YePXE95oT639Aql8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Atropellan a señora\",\r\n    \"text\":\"un camion Atropella a señora en la avenida elena\",\r\n    \"user\":\"67b91db02f98d19e8261e452\",\r\n    \"category\":\"67b934ab121bd0c64c920b9d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/opinionmanager/v1/publication/addPublication",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"opinionmanager",
+								"v1",
+								"publication",
+								"addPublication"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPublication",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/opinionmanager/v1/publication/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"opinionmanager",
+								"v1",
+								"publication",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePublication",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I5MWRiMDJmOThkMTllODI2MWU0NTIiLCJpYXQiOjE3NDAxOTA1NjIsImV4cCI6MTc0MDE5NDE2Mn0.NQGzC-r9m8PIhLXWBzeqZzDVeZ7YePXE95oT639Aql8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Atropellan a señoras\",\r\n    \"text\":\"un camion tropella a señoras en la avenida elena\",\r\n    \"category\":\"67b934ab121bd0c64c920b9d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/opinionmanager/v1/publication/updatePublication/67b93507121bd0c64c920ba0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"opinionmanager",
+								"v1",
+								"publication",
+								"updatePublication",
+								"67b93507121bd0c64c920ba0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePublication",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I5MWRiMDJmOThkMTllODI2MWU0NTIiLCJpYXQiOjE3NDAxOTA1NjIsImV4cCI6MTc0MDE5NDE2Mn0.NQGzC-r9m8PIhLXWBzeqZzDVeZ7YePXE95oT639Aql8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/opinionmanager/v1/publication/deletePublication/67b93617121bd0c64c920bac",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"opinionmanager",
+								"v1",
+								"publication",
+								"deletePublication",
+								"67b93617121bd0c64c920bac"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "addComment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\":\"Dios la tenga en su santa gloria\",\r\n    \"user\":\"67b91db02f98d19e8261e452\",\r\n    \"post\":\"67b93507121bd0c64c920ba0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/opinionmanager/v1/comment/addComment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"opinionmanager",
+								"v1",
+								"comment",
+								"addComment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateComment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I5MWRiMDJmOThkMTllODI2MWU0NTIiLCJpYXQiOjE3NDAxOTA1NjIsImV4cCI6MTc0MDE5NDE2Mn0.NQGzC-r9m8PIhLXWBzeqZzDVeZ7YePXE95oT639Aql8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"Que dios la guarde\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/opinionmanager/v1/comment/updateComment/67b9378d848a56d892716085",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"opinionmanager",
+								"v1",
+								"comment",
+								"updateComment",
+								"67b9378d848a56d892716085"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteComment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I5MWRiMDJmOThkMTllODI2MWU0NTIiLCJpYXQiOjE3NDAxOTA1NjIsImV4cCI6MTc0MDE5NDE2Mn0.NQGzC-r9m8PIhLXWBzeqZzDVeZ7YePXE95oT639Aql8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/opinionmanager/v1/comment/deleteComment/67b7f901766f6da6207f80e9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"opinionmanager",
+								"v1",
+								"comment",
+								"deleteComment",
+								"67b7f901766f6da6207f80e9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

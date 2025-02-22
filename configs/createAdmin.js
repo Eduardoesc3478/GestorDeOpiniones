@@ -15,7 +15,7 @@ export const addAdmin = async() =>{
             surname: "Admin",
             username: "admin",
             email: "admin@gmail.com",
-            password: "123",
+            password: "Adm1n***",
             role: "ADMIN_ROLE",
             phone:"12345678"
         };

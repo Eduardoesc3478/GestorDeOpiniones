@@ -39,5 +39,12 @@ export const publicationExists = async (pid = "") => {
 }
 
 
+export const commentExists = async (cid = "") => {
+    const existe = await Comment.findOne({cid})
+    if(existe){
+        throw new Error(`The username ${cid} is already registered`)
+    }
+}
+
 
 
