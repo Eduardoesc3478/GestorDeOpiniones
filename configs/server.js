@@ -9,6 +9,7 @@ import authRoutes from "../src/auth/auth.routes.js";
 import userRoutes from "../src/user/user.routes.js";
 import categoryRoutes from "../src/category/category.routes.js"
 import publicationRoutes from "../src/publication/publication.routes.js";
+import commentRoutes from "../src/comment/comment.routes.js";
 import apiLimiter from "../src/middlewares/rate-limit-validator.js";
 import { swaggerDocs, swaggerUi } from "./swagger.js";
 
@@ -26,7 +27,7 @@ const routes = (app) => {
     app.use("/opinionmanager/v1/user", userRoutes);
     app.use("/opinionmanager/v1/category", categoryRoutes );
     app.use("/opinionmanager/v1/publication", publicationRoutes);
-
+    app.use("/opinionmanager/v1/comment", commentRoutes); 
 
     app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 };

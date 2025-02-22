@@ -5,25 +5,26 @@ const options ={
     swaggerDefinition:{
         openapi:"3.0.0",
         info:{
-            title: "Adoption System API",
+            title: "Opinion Manager API",
             version: "1.0.0",
-            description: "API para un sistema de gestión de adopciones de mascotas",
+            description: "API para un sistema de gestión de opiniones",
             contact:{
-                name: "Braulio Echeverria",
-                email: "braulioecheverria@kinal.org.gt"
+                name: "Carlos Escobar",
+                email: "cescobar-2019272@kinal.edu.gt"
             }
         },
         servers:[
             {
-                url: "http://127.0.0.1:3001/adoptionSystem/v1"
+                url: "http://127.0.0.1:3001/opinionmanager/v1"
             }
         ]
     },
     apis:[
         "./src/auth/auth.routes.js",
         "./src/user/user.routes.js",
-        "./src/pet/pet.routes.js",
-        "./src/appointment/appointment.routes.js"
+        "./src/category/category.routes.js",
+        "./src/pubication/publication.routes.js",
+        "./src/comment/comment.routes.js"
     ]
 }
 
